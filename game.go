@@ -5,7 +5,7 @@ import (
 	//"log"
 	"os"
 
-	"github.com/leebrinton/tileslib"
+	"github.com/leebrinton/gotileslib"
 	//"code.google.com/p/goncurses"
 	//"github.com/rthornton128/goncurses"
 	"github.com/gbin/goncurses"

@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/leebrinton/tileslib"
+	"github.com/leebrinton/gotileslib"
 	//`"code.google.com/p/goncurses"
 	//"github.com/rthornton128/goncurses"
 	"github.com/gbin/goncurses"
@@ -24,7 +24,7 @@ func getDurationString(startTime time.Time) string {
 	durationStr := ""
 
 	if duration > time.Hour {
-		hours := (duration/time.Hour)
+		hours := (duration / time.Hour)
 		durationStr := fmt.Sprintf("%d hour", hours)
 		if hours > 1 {
 			durationStr += "s"
@@ -34,7 +34,7 @@ func getDurationString(startTime time.Time) string {
 	}
 
 	if duration > time.Minute {
-		minutes := (duration/time.Minute)
+		minutes := (duration / time.Minute)
 		tmpStr := fmt.Sprintf("%d minute", minutes)
 		if minutes > 1 {
 			tmpStr += "s"
@@ -45,7 +45,7 @@ func getDurationString(startTime time.Time) string {
 	}
 
 	if duration > time.Second {
-		seconds := (duration/time.Second)
+		seconds := (duration / time.Second)
 		tmpStr := fmt.Sprintf("%d second", seconds)
 		if seconds > 1 {
 			tmpStr += "s"
@@ -58,7 +58,7 @@ func getDurationString(startTime time.Time) string {
 }
 
 func drawCongratsMessage(dialog *goncurses.Window,
-                         row *int, col *int, startTime time.Time) {
+	row *int, col *int, startTime time.Time) {
 	durationStr := getDurationString(startTime)
 
 	dialog.MovePrint(*row, *col, "Congratulations, you solved the puzzle in")
@@ -75,7 +75,7 @@ func drawQuestionMessage(dialog *goncurses.Window, row *int, col *int) {
 }
 
 func drawAskDialog(config *CursesConfig,
-                   model *tileslib.Model) *goncurses.Window {
+	model *tileslib.Model) *goncurses.Window {
 	nlines := 5
 	solved := model.Solved()
 	termlines := 50
