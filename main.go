@@ -1,13 +1,22 @@
+// Package gotiles_curses a tiles puzzle game with a curses user interface.
+//
+// Copyright (C) 2021 H. Lee Brinton.
+// License GPLv3+: GNU GPL version 3 or later
+// <http://gnu.org/licenses/gpl.html>
+// This is free software: you are free to change and redistribute it.
+// There is NO WARRANTY, to the extent permitted by law.
+//
 package main
 
 import (
 	"flag"
 	"fmt"
+
 	//"log"
 	"os"
 	"strings"
 
-	"github.com/leebrinton/gotileslib"
+	tileslib "github.com/leebrinton/gotileslib"
 	//`"code.google.com/p/goncurses"
 	//"github.com/rthornton128/goncurses"
 	"github.com/gbin/goncurses"
@@ -56,7 +65,7 @@ func processCmdLine(config *CursesConfig) {
 	var emptyCellCentric = flag.Bool("empty-cell-centric", false, "directional key commands move the empty cell")
 	var fg = flag.String("fg", "white", "the foreground color")
 	var help = flag.Bool("help", false, "show a help message and exit")
-	var iterations = flag.Int("iterations", tileslib.DEFAULT_SCRAMBLE_ITERATIONS, "the number of scramble iterations")
+	var iterations = flag.Int("iterations", tileslib.DefaultScrambleIterations, "the number of scramble iterations")
 	var acsChars = flag.Bool("acs", false, "use acs chars for line drawing")
 	var version = flag.Bool("version", false, "show the version and exit")
 

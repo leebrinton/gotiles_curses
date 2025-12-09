@@ -1,7 +1,15 @@
+// Package gotiles_curses a tiles puzzle game with a curses user interface.
+//
+// Copyright (C) 2021 H. Lee Brinton.
+// License GPLv3+: GNU GPL version 3 or later
+// <http://gnu.org/licenses/gpl.html>
+// This is free software: you are free to change and redistribute it.
+// There is NO WARRANTY, to the extent permitted by law.
+//
 package main
 
 import (
-	"github.com/leebrinton/gotileslib"
+	tileslib "github.com/leebrinton/gotileslib"
 	//"code.google.com/p/goncurses"
 	//"github.com/rthornton128/goncurses"
 	"github.com/gbin/goncurses"
@@ -82,7 +90,7 @@ type CursesConfig struct {
 func NewCursesConfig() *CursesConfig {
 	c := new(CursesConfig)
 
-	c.base.ScrambleIterations = tileslib.DEFAULT_SCRAMBLE_ITERATIONS
+	c.base.ScrambleIterations = tileslib.DefaultScrambleIterations
 	c.base.CommandMode = tileslib.EmptyCellCentric
 	c.FgColor = goncurses.C_WHITE
 	c.BgColor = goncurses.C_BLACK
