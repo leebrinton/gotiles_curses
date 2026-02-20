@@ -1,0 +1,8 @@
+#!/bin/sh
+
+imagename=gotiles_curses
+containername=gotiles
+
+docker build -t $imagename . &&
+  docker run -ti --name $containername --rm $imagename &&
+  docker image rm $imagename
